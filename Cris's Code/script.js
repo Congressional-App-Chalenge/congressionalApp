@@ -3,42 +3,30 @@ const choices = Array.from(document.getElementsByClassName("choiceText"));
 const progressText = document.getElementById('progressText');
 const scoreText = document.getElementById('score');
 const progressBarFull = document.getElementById('progressBarFull');
+const finalScoreText = document.getElementById("endScore");
 
 let currentQuestion = {};
 let acceptingAnswers = true;
 let score = 0;
 let qCounter=0;
 let availiableQs = [];
+let correct = 0;
 
-let questions = [
-    {
-        question: 'Question Number 1',
-        choice1: 'CHOICE UNO',
-        choice2: 'Choice 2',
-        choice3: 'Choice 3',
-        choice4: 'Choice 4',
-        answer: 1,
-    },
-    {
-        question: 'Question Number 2',
-        choice1: 'Choice 1',
-        choice2: 'Choice 2',
-        choice3: 'Choice 3',
-        choice4: 'OPTION FOUR',
-        answer: 4,
-    },
-    {
-        question: 'Question Number 3',
-        choice1: 'Choice 1??',
-        choice2: 'Choice 2???',
-        choice3: 'THREEE??????',
-        choice4: 'Choice 4???',
-        answer: 3,
-    },
-];
+let questions = [];
+
+fetch("questions.json")
+    .then(res => {
+        return res.json();
+    }).then(loadedQs => {
+        questions = loadedQs;
+        startQuiz();
+    })
+    .catch(err => {
+        console.log(err);
+    });
 
 const CORRECTBONUS = 10;
-const MAXQUESTIONS = 3;
+const MAXQUESTIONS = 10;
 
 startQuiz = () => {
     qCounter = 0;
@@ -49,7 +37,10 @@ startQuiz = () => {
 
 getNewQuestion = () => {
     if(availiableQs.length==0 || qCounter>=MAXQUESTIONS){
-        return window.location.assign("/end.html");
+        //finalScoreText.innerText = "Congrats!! You got "+ correct + "out of " + MAXQUESTIONS + "questions correct!" ;
+        localStorage.setItem('recentScore', score);
+        localStorage.setItem('totalQs', MAXQUESTIONS);
+        return window.location.assign("./end.html");
     }
     qCounter++;
     progressText.innerText = 'Question: '+qCounter+'/'+MAXQUESTIONS;
@@ -85,6 +76,7 @@ choices.forEach((choice) =>{
 
         if(classToApply == 'correct') {
             incrementScore(CORRECTBONUS);
+            correct++;
         }
 
         selectedChoice.parentElement.classList.add(classToApply);
@@ -101,4 +93,3 @@ incrementScore = num => {
     scoreText.innerText = score;
 }
 
-startQuiz();
