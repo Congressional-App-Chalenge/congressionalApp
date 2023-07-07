@@ -1,0 +1,76 @@
+*{
+    color: white;
+}
+
+.choiceContainer{
+    display: flex;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    font-size: 1.8rem;
+    border: 0.1rem solid rgba(85, 165, 235, 0.25);
+    background-color: #FEFCFB;
+    color: black;
+}
+
+.choiceContainer:hover{
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(85, 185, 235, 0.5);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+}
+
+.choiceLetter{
+    padding: 1.5rem 2.5rem;
+    background-color: #034078;
+    color: #FEFCFB;
+}
+
+.choiceText{
+    padding: 1.5rem;
+    width: 100%;
+    color: black;
+}
+
+.correct{
+    background-color: limegreen;
+}
+
+.incorrect{
+    background-color: red;
+}
+
+#hud{
+    display: flex;
+    justify-content: space-around;
+}
+
+.hudPrefix{
+    text-align: center;
+    font-size: 2rem;
+}
+
+.hudMainText{
+    text-align: center;
+}
+
+
+#progressBar{
+    width: 20rem;
+    height: 4rem;
+    border: 0.3rem solid #1282A2;
+    margin-top: 2rem;
+}
+
+#progressBarFull{
+    height: 3.4rem;
+    background-color: #1282A2;
+    width: 0%;
+}
+
+#question{
+    font-size: 2rem;
+}
+
+.tab{
+    padding: 0 5rem;
+}
