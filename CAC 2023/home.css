@@ -1,0 +1,19 @@
+:root{
+    background-color: whitesmoke;
+    font-size: 62.5%;
+}
+
+.title{
+    font-size: 48pt;
+}
+
+.flexColumn{
+    display: flex;
+    flex-direction: column;
+}
+
+.flexCenter{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
