@@ -12,8 +12,24 @@
     flex-direction: column;
 }
 
+.flexRow{
+    display: flex;
+    flex-direction: row;
+}
+
 .flexCenter{
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.cacImg{
+    width: 10%;
+    justify-content: flex-end, flex-start;
+
+}
+
+.topbar{
+    padding: 10px;
+    font-size: 12pt;
 }
