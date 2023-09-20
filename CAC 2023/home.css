@@ -33,3 +33,11 @@
     padding: 10px;
     font-size: 12pt;
 }
+
+.pageLink{
+    color: black;
+}
+
+.pageLink:visited{
+    color: black;
+}
