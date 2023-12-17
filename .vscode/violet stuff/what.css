@@ -1,0 +1,28 @@
+*{
+    color: cadetblue;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+
+}
+
+.words{
+    font-size: 80pt;
+    margin-bottom: -0px;
+
+    border: blueviolet;
+    border-radius: 40px;
+    border-style: solid;
+    border-width: 30px;
+}
+
+.photo{
+    width: 120px;
+    align-items: center;
+    margin-top: -45px;
+}
+
+.hat{
+    margin-left: 500px;
+    width: 120px;
+    margin: 0;
+}
